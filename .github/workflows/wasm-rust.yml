@@ -28,6 +28,7 @@ jobs:
         with:
           node-version: 16
       - run: |
+          export NODE_OPTIONS=--openssl-legacy-provider
           cd www
           npm install
           npm test
