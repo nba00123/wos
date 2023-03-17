@@ -9,11 +9,16 @@ use wasm_bindgen::prelude::*;
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[wasm_bindgen]
-extern {
+extern "C" {
     fn alert(s: &str);
 }
 
 #[wasm_bindgen]
 pub fn greet() {
     alert("Hello, wos!");
+}
+
+#[wasm_bindgen]
+pub fn sum(a: i32, b: i32) -> i32 {
+    return a + b;
 }
